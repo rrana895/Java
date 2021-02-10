@@ -14,19 +14,15 @@ public class BinaryNumber { //Binary class with properties data
 		}
 	}
 	
-	public BinaryNumber(String str) // Creating a binary number given a string
-	{ 
+	public BinaryNumber(String str){ // Creating a binary number given a string 
 		data = new int[str.length()];
 	    
-	  for (int x = 0; x < str.length(); x++) 
-	  {
+	  for (int x = 0; x < str.length(); x++) {
 	  	data[x] = java.lang.Character.getNumericValue(str.charAt(x));
-	    
-	  }			
+	    }			
 	}
 	
-	public int getLength() //Determine the length of a binary number
-	{ 
+	public int getLength() { //Determine the length of a binary number
 		return data.length;
 	}
 	
