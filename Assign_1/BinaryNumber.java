@@ -1,7 +1,8 @@
 package lesson1;
 
+import java.lang.*;
 
-public class BinaryNumber {
+public class BinaryNumber { //Binary class with properties data  
 	
 	private int data[]; 
 	private boolean overflow;
@@ -13,17 +14,30 @@ public class BinaryNumber {
 		}
 	}
 	
-	public BinaryNumber(String Str) { // Creating a binary number given a string
-		
-		
+	public BinaryNumber(String str) // Creating a binary number given a string
+	{ 
+		data = new int[str.length()];
+	    
+	  for (int x = 0; x < str.length(); x++) 
+	  {
+	  	data[x] = java.lang.Character.getNumericValue(str.charAt(x));
+	    
+	  }			
 	}
 	
-	public int getLength() { //Determine the length of a binary number
-		return 0;
+	public int getLength() //Determine the length of a binary number
+	{ 
+		return data.length;
 	}
 	
 	public int getDigit(int index) { // To obtain a digit of a binary number given an index
-		return 0;
+		if(index < data.length ) {
+			return data[index];
+		}
+		else {
+			return("Index out of bounds!");
+		}	
+								
 	}
 	
 	public int toDecimal() { // transforming a binary number to its decimal notation
@@ -48,9 +62,6 @@ public class BinaryNumber {
 		
 	}
 	
-	
-	
-	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -58,3 +69,5 @@ public class BinaryNumber {
 	}
 
 }
+
+	
